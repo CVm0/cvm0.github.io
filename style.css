@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    border: #6f42c1 3px solid;
+    border-radius: 0px 0px 15px 15px;
+    background-color: #6f42c1;
+    color: white;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+
+
+.producto{
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 12px;
+    margin: 12px;
+    text-align: left;
+    background-color: rgb(214, 214, 214);
+    transition: transform 0.s;
+}
+
+.contenedor-fila{
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    margin: 40px auto;
+}
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.button2 {
+    background-color: #5b0c6e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #0056b3;
+}
+.button2:hover {
+    background-color: #6d1085;
+}
+.foto {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
