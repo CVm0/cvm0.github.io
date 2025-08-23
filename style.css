@@ -76,3 +76,8 @@ header {
     object-fit: cover;
     border-radius: 10px;
 }
+.somos {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
