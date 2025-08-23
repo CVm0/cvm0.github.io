@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Tienda Simulada</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <header>
+        <h1>Bienvenido a Nuestra Tienda</h1>
+        <nav>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#productos" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Productos</a>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#carrito" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Carrito
+            </a>
+        </nav>
+    </header>
+</head>
+<body>
+    
+    <!-- -->
+    <!-- Sección de bienvenida -->
+    <div class="collapse" id="productos">
+      <div class="card card-body">
+        <div class="row g-4 justify-content-center">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 producto">
+        <img class="foto" src="auto1.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Lamborghini</h5>
+            <p class="card-text">Diseño exótico y aerodinámico, este Lamborghini en miniatura captura la esencia de la velocidad y el lujo. ¡Una joya para cualquier coleccionista!</p>
+            <p> $15,990</p>
+            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 producto">
+        <img class="foto" src="Fewawi.jpg" alt="aa">
+        <div class="card-body">
+            <h5 class="card-title">Ferrari</h5>
+            <p class="card-text">Elegancia italiana en escala reducida. Este Ferrari combina líneas agresivas con un acabado impecable. ¡Ideal para destacar en tu vitrina!</p>
+            <p>$19,990</p>
+            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+        </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 producto">
+        <img class="foto" src="camaro.jpg" alt="aa">
+        <div class="card-body">
+            <h5 class="card-title">Camaro</h5>
+            <p class="card-text">Un clásico muscle car americano con actitud. Este Camaro '69 edición Hot Wheels derrocha estilo retro y potencia en cada detalle. ¡Imprescindible!</p>
+            <p>$12,990</p>
+            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    <div class="collapse" id="carrito">
+      <div class="card card-body">
+         <section id="carrito">
+            <h2>Tu Carrito</h2>
+            <ul id="lista-carrito">
+                
+            </ul>
+            <p id="total">Total: $0</p>
+        </section-->
+      </div>
+    </div>
+</div>
+<p>Sobre nosotros: Somos una Tienda pequeña que vende hotwheels yera</p> 
+    <footer>
+        <p>&copy; 2025 Tienda Simulada. Todos los derechos reservados.</p>
+    </footer>    
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const listaCarrito = document.getElementById('lista-carrito');
+    const totalCarrito = document.getElementById('total');
+    let total = 0;
+
+    document.querySelectorAll('.producto .btn.btn-primary').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const producto = btn.closest('.producto');
+            const nombre = producto.querySelector('.card-title').textContent;
+            let precio = producto.querySelector('p:not(.card-text)');
+            if (!precio) {
+                precio = producto.querySelector('label');
+            }
+            let valor = precio ? precio.textContent.replace(/[^0-9,.]/g, '') : '0';
+            valor = valor.replace(',', '');
+            const precioNum = parseFloat(valor);
+
+            const li = document.createElement('li');
+            li.innerHTML = `${nombre} - $${precioNum} <button class="btn btn-danger btn-sm ms-2">Eliminar</button>`;
+            listaCarrito.appendChild(li);
+
+            total += precioNum;
+            totalCarrito.textContent = `Total: $${total}`;
+
+            li.querySelector('.btn-eliminar, .btn-danger').addEventListener('click', function() {
+                listaCarrito.removeChild(li);
+                total -= precioNum;
+                totalCarrito.textContent = `Total: $${total}`;
+            });
+        });
+    });
+});
+</script>
+</body>
+</html>
