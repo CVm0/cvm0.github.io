@@ -9,7 +9,7 @@
     <title>Tienda Simulada</title>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <header>
-        <h1>Bienvenido a Nuestra Tienda</h1>
+        <h1>Bienvenido a la tienda de Camilo Carrasco</h1>
         <nav>
             <a class="btn btn-primary" data-bs-toggle="collapse" href="#productos" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Productos</a>
             <a class="btn btn-primary" data-bs-toggle="collapse" href="#carrito" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -26,7 +26,7 @@
       <div class="card card-body">
         <div class="row g-4 justify-content-center">
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 producto">
-        <img class="foto" src="auto1.jpg" alt="Card image cap">
+        <img class="foto" src="fotos/auto1.jpg" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">Lamborghini</h5>
             <p class="card-text">Diseño exótico y aerodinámico, este Lamborghini en miniatura captura la esencia de la velocidad y el lujo. ¡Una joya para cualquier coleccionista!</p>
@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 producto">
-        <img class="foto" src="Fewawi.jpg" alt="aa">
+        <img class="foto" src="fotos/Fewawi.jpg" alt="aa">
         <div class="card-body">
             <h5 class="card-title">Ferrari</h5>
             <p class="card-text">Elegancia italiana en escala reducida. Este Ferrari combina líneas agresivas con un acabado impecable. ¡Ideal para destacar en tu vitrina!</p>
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 producto">
-        <img class="foto" src="camaro.jpg" alt="aa">
+        <img class="foto" src="fotos/camaro.jpg" alt="aa">
         <div class="card-body">
             <h5 class="card-title">Camaro</h5>
             <p class="card-text">Un clásico muscle car americano con actitud. Este Camaro '69 edición Hot Wheels derrocha estilo retro y potencia en cada detalle. ¡Imprescindible!</p>
@@ -56,6 +56,7 @@
       </div>
     </div>
     <div class="collapse" id="carrito">
+        
       <div class="card card-body">
          <section id="carrito">
             <h2>Tu Carrito</h2>
@@ -63,11 +64,39 @@
                 
             </ul>
             <p id="total">Total: $0</p>
-        </section-->
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#pago" role="button" aria-expanded="false" aria-controls="pago">Ir a Pagar</a>
+        </section>
       </div>
     </div>
+    <div class="collapse"id="pago">
+      <div class="card card-body">
+        <h2>Pago</h2>
+        <form>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccion" required>
+            </div>
+            <div class="mb-3">
+                <label for="tarjeta" class="form-label">Número de Tarjeta</label>
+                <input type="text" class="form-control" id="tarjeta" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Pagar</button>
+        </form>
+      </div>
 </div>
-<p>Sobre nosotros: Somos una Tienda pequeña que vende hotwheels yera</p> 
+<div class="somos">   
+    <p>Nuestra tienda está especializada en la venta de autos Hot Wheels, 
+        ofreciendo una amplia variedad de modelos para coleccionistas, aficionados y niños. 
+        Contamos con ediciones clásicas, series especiales, autos temáticos, pistas de carrera y accesorios originales. 
+        Nos esforzamos por brindar productos de calidad, atención personalizada y un espacio donde la pasión por los autos a escala cobra vida. 
+        Ya sea que estés iniciando tu colección o buscando esa pieza difícil de encontrar, 
+        aquí encontrarás todo lo que necesitas para llevar tu afición al siguiente nivel.
+    </p> 
+</div>
     <footer>
         <p>&copy; 2025 Tienda Simulada. Todos los derechos reservados.</p>
     </footer>    
